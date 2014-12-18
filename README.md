@@ -1,4 +1,4 @@
-barato.io-client
+hipopocket-client
 ================
 
-Aplicação front-end do barato.io, para iniciar execute o comando `gulp watch`.
+Aplicação front-end do Hipopocket, para iniciar execute o comando `gulp watch`.

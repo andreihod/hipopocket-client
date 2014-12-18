@@ -1,5 +1,5 @@
 {
-  "name": "barato-io-client",
+  "name": "hipopocket-client",
   "private": true,
   "dependencies": {
     "bootstrap-sass-official": "~3.1.1",

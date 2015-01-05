@@ -19,8 +19,8 @@ gulp.task('styles', function () {
 
 gulp.task('scripts', function () {
     return gulp.src('app/scripts/**/*.js')
-        .pipe($.jshint())
-        .pipe($.jshint.reporter(require('jshint-stylish')))
+        //.pipe($.jshint())
+        //.pipe($.jshint.reporter(require('jshint-stylish')))
         .pipe($.size());
 });
 
@@ -120,6 +120,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
 
     gulp.watch([
         'app/*.html',
+        'app/views/*.html',
         '.tmp/styles/**/*.css',
         'app/scripts/**/*.js',
         'app/images/**/*'

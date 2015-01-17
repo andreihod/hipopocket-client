@@ -17,23 +17,18 @@ gulp.task('styles', function () {
         .pipe($.size());
 });
 
-gulp.task('scripts', function () {
-    return gulp.src('app/scripts/**/*.js')
-        //.pipe($.jshint())
-        //.pipe($.jshint.reporter(require('jshint-stylish')))
-        .pipe($.size());
-});
-
-gulp.task('html', ['styles', 'scripts'], function () {
+gulp.task('html', ['styles'], function () {
     var jsFilter = $.filter('**/*.js');
     var cssFilter = $.filter('**/*.css');
 
-    return gulp.src('app/*.html')
+    return gulp.src('app/index.html')
         .pipe($.useref.assets({searchPath: '{.tmp,app}'}))
         .pipe(jsFilter)
-        .pipe($.uglify())
+        .pipe($.ngAnnotate())
+        .pipe($.uglify({'mangle': false}))
         .pipe(jsFilter.restore())
         .pipe(cssFilter)
+        .pipe($.replace('bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap','fonts'))
         .pipe($.csso())
         .pipe(cssFilter.restore())
         .pipe($.useref.restore())
@@ -62,7 +57,7 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('extras', function () {
-    return gulp.src(['app/*.*', '!app/*.html'], { dot: true })
+    return gulp.src(['app/*.*', '!app/*.html', 'app/**/*.html'], { dot: true })
         .pipe(gulp.dest('dist'));
 });
 
@@ -92,6 +87,19 @@ gulp.task('connect', function () {
 });
 
 gulp.task('serve', ['connect', 'styles'], function () {
+    require('opn')('http://localhost:9000');
+});
+
+gulp.task('serve:dist', ['build'], function () {
+    var connect = require('connect');
+    var app = connect()
+        .use(connect.static('dist'))
+        .use(connect.directory('dist'));
+    require('http').createServer(app)
+        .listen(9000)
+        .on('listening', function () {
+            console.log('Started connect web server on http://localhost:9000');
+        });
     require('opn')('http://localhost:9000');
 });
 
@@ -129,7 +137,6 @@ gulp.task('watch', ['connect', 'serve'], function () {
     });
 
     gulp.watch('app/styles/**/*.scss', ['styles']);
-    gulp.watch('app/scripts/**/*.js', ['scripts']);
     gulp.watch('app/images/**/*', ['images']);
     gulp.watch('bower.json', ['wiredep']);
 });

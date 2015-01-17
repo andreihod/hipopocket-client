@@ -21,9 +21,10 @@
     "gulp-size": "^0.3.0",
     "gulp-uglify": "^0.2.1",
     "gulp-useref": "^0.4.2",
-    "jshint-stylish": "^0.2.0",
+    "gulp-ng-annotate": "^0.4.3",
+    "gulp-replace": "^0.5.1",
     "opn": "^0.1.1",
-    "wiredep": "^1.4.3"
+    "wiredep": "^1.4.3"    
   },
   "engines": {
     "node": ">=0.10.0"

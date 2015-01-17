@@ -1,7 +1,7 @@
 angular.module("Hipopocket", ['ngRoute'])
 
 .config(
-    function($routeProvider) {
+    function($routeProvider, $locationProvider) {
         
         $routeProvider
         .when('/:tipo', {

@@ -69,6 +69,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     $up-vote   : $brand-primary;
     $down-vote : $brand-danger;
     $default-padding: 15px;
+    $cinza-claro: #A6A6A6;
 
 // -----------
 
@@ -102,7 +103,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 }
 
 .promocao-fav {
-    color: #A6A6A6;
+    color: $cinza-claro;
     cursor: pointer;
 }
 
@@ -123,10 +124,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     @extend .promocao-text;
 }
 
+.promocao-tempo {
+    color: $cinza-claro;
+     display: block;
+}
+
 .promocao-vote span {
     @extend .promocao-text;
     display: block;
-    color: #A6A6A6;
+    color: $cinza-claro;
 }
 
 .promocao-score {

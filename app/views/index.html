@@ -1,9 +1,9 @@
 <!-- Tabs -->
 <ul class="nav nav-tabs">
-    <li role="presentation" class="active">
+    <li role="presentation" ng-class="{active: tipo=='destaques'}">
         <a href="#/destaques"><span class="glyphicon glyphicon-fire"></span> Em Destaque</a>
     </li>
-    <li role="presentation">
+    <li role="presentation" ng-class="{active: tipo=='novos'}">
         <a href="#/novos"><span class="glyphicon glyphicon-asterisk"></span> Novos</a>
     </li>
 </ul>

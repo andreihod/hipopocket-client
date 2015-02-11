@@ -1,4 +1,4 @@
-angular.module("Hipopocket", ['ngRoute'])
+angular.module("Hipopocket", ['ngRoute', 'ngResource'])
 
 .config(
     function($routeProvider, $locationProvider) {
@@ -19,3 +19,12 @@ angular.module("Hipopocket", ['ngRoute'])
         })
     }
 )
+
+.run(function($rootScope, $location) {
+  
+  $rootScope.baseUrl = function(){
+    // Url base do servidor rest
+    return 'http://localhost:3000/api/v1';
+  }
+  
+})

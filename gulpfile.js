@@ -65,7 +65,31 @@ gulp.task('clean', function () {
     return gulp.src(['.tmp', 'dist'], { read: false }).pipe($.clean());
 });
 
-gulp.task('build', ['html', 'images', 'fonts', 'extras']);
+gulp.task('config', function () {
+    var myConfig = require('./config.json');
+    var envConfig = myConfig["development"];
+    return $.ngConstant({
+        name: 'Hipopocket',
+        constants: envConfig,
+        deps: false,
+        stream: true
+    })
+    .pipe(gulp.dest('app/scripts'));
+});
+
+gulp.task('distconfig', function () {
+    var myConfig = require('./config.json');
+    var envConfig = myConfig["production"];
+    return $.ngConstant({
+        name: 'Hipopocket',
+        constants: envConfig,
+        deps: false,
+        stream: true
+    })
+    .pipe(gulp.dest('dist/scripts'));
+});
+
+gulp.task('build', ['distconfig', 'html', 'images', 'fonts', 'extras']);
 
 gulp.task('default', ['clean'], function () {
     gulp.start('build');
@@ -121,7 +145,7 @@ gulp.task('wiredep', function () {
         .pipe(gulp.dest('app'));
 });
 
-gulp.task('watch', ['connect', 'serve'], function () {
+gulp.task('watch', ['config', 'connect', 'serve'], function () {
     var server = $.livereload();
 
     // watch for changes

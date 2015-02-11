@@ -11,10 +11,7 @@
 <!-- Promoções -->
 <div class="row">
     <div class="col-md-9">
-        <promocao data=""></promocao>
-        <promocao data=""></promocao>
-        <promocao data=""></promocao>
-        <promocao data=""></promocao>
+        <promocao ng-repeat="p in promocoes" data="p"></promocao>
     </div>
     <div class="col-md-3 hidden-xs hidden-sm">
         <div class="painel-controle panel panel-default">

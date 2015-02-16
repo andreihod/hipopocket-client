@@ -1,7 +1,9 @@
 angular.module("Hipopocket", ['ngRoute', 'ngResource'])
 
 .config(
-    function($routeProvider, $locationProvider) {
+    function($routeProvider, $locationProvider, $httpProvider) {
+
+        $httpProvider.defaults.withCredentials = true;
         
         $routeProvider
         .when('/:tipo', {

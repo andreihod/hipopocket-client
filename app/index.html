@@ -55,7 +55,13 @@
                 </ul>         
             </div>
         </nav>
-        
+
+        <!-- Login temporário -->
+        <ul>
+            <li> <a href="http://localhost:3000/api/v1/auth/facebook"> Login with Facebook</a></li>
+            <li> <a href="http://localhost:3000/api/v1/auth/google"> Login with Google</a></li>
+        </ul>
+
         <div class="container" ng-view>
             
                         
@@ -101,6 +107,7 @@
 
         <!-- Factories -->
         <script src="scripts/factories/PromocaoFactory.js"></script>
+        <script src="scripts/factories/VotoFactory.js"></script>
 
         <!-- Controllers -->
         <script src="scripts/controllers/IndexController.js"></script>

@@ -147,7 +147,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     cursor: pointer;
 }
 
-.up-vote:hover, .up-vote:active {
+.up-vote:hover, .up-vote:active, .upvoted {
     @extend .vote;
     color: $up-vote;
 }
@@ -160,7 +160,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     transform:rotateY(180deg);
 }
 
-.down-vote:hover, .down-vote:active {
+.down-vote:hover, .down-vote:active, .downvoted {
     @extend .vote;
     color: $down-vote;
 }

@@ -6,7 +6,7 @@ angular.module("Hipopocket")
         templateUrl: 'views/voto.html',
         scope: {
 	        promocao: '=promocao'
-	     },
+	     	},
         controller: 'VotoController'
     };
 });

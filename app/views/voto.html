@@ -1,5 +1,5 @@
 <div class="promocao-vote col-xs-1">
-    <span class="up-vote glyphicon glyphicon-thumbs-up"></span>
-    <span class="promocao-score">1247</span>
-    <span class="down-vote glyphicon glyphicon-thumbs-down"></span>
+    <span ng-click="upvote()" ng-class="{upvoted: promocao.voto_tipo === 'U'}" class="up-vote glyphicon glyphicon-thumbs-up"></span>
+    <span class="promocao-score">{{promocao.promo_votos}}</span>
+    <span ng-click="downvote()" ng-class="{downvoted: promocao.voto_tipo === 'D'}" class="down-vote glyphicon glyphicon-thumbs-down"></span>
 </div>

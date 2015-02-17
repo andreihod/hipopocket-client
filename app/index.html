@@ -13,7 +13,8 @@
         <!-- endbuild -->
         
         <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
+        <link href='http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+        
         <!-- build:css styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -24,47 +25,10 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <nav class="navbar navbar-default" role="navigation">
-
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="#/">Hipopocket</a>
-                </div>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Pesquisar...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>           
-                <ul class="nav navbar-nav navbar-right">  
-                    <li class="dropdown">
-                        <a href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            Seja bem-vindo, Usuário <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="#/">Sair</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>         
-            </div>
-        </nav>
-
-        <!-- Login temporário -->
-        <ul>
-            <li> <a href="http://localhost:3000/api/v1/auth/facebook"> Login with Facebook</a></li>
-            <li> <a href="http://localhost:3000/api/v1/auth/google"> Login with Google</a></li>
-        </ul>
+        <!-- Barra de Navegação -->
+        <navbar></navbar>
 
         <div class="container" ng-view>
-            
-                        
             
         </div>
 
@@ -84,6 +48,9 @@
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
         <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/moment/locale/pt-br.js"></script>
+        <script src="bower_components/angular-moment/angular-moment.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -114,13 +81,17 @@
         <script src="scripts/controllers/PubliqueController.js"></script>
         <script src="scripts/controllers/PromocaoController.js"></script>
         <script src="scripts/controllers/VotoController.js"></script>
+        <script src="scripts/controllers/NavbarController.js"></script>
 
         <!-- Directives -->
         <script src="scripts/directives/PromocaoDirective.js"></script>
         <script src="scripts/directives/VotoDirective.js"></script>
+        <script src="scripts/directives/NavbarDirective.js"></script>
 
         <!-- endbuild -->
 
+        <!-- Arquivo de Configuração -->
         <script src="scripts/constants.js"></script>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-angular.module("Hipopocket", ['ngRoute', 'ngResource'])
+angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment'])
 
 .config(
     function($routeProvider, $locationProvider, $httpProvider) {
@@ -21,3 +21,7 @@ angular.module("Hipopocket", ['ngRoute', 'ngResource'])
         })
     }
 )
+
+.run(function(amMoment) {
+    amMoment.changeLocale('pt-br');
+});

@@ -71,6 +71,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     $default-padding: 15px;
     $cinza-claro: #A6A6A6;
 
+    $facebook-color: #3B5998;
+    $google-color: #DD4B39;
+
 // -----------
 
 // bower:scss
@@ -89,6 +92,35 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 
 ::-moz-selection {
     @extend .textselection; /* Gecko Browsers */
+}
+
+nav li a.login-buttons {
+    line-height: 60px;
+    padding: 0px 10px;
+}
+
+nav li a.ou-button {
+    padding: 0px;
+}
+
+.facebook-button {
+    background-color: $facebook-color;
+    border-color: darken($facebook-color, 5%);
+}
+
+.facebook-button:hover, .facebook-button:active, .facebook-button:focus {
+    background-color: darken($facebook-color, 10%);
+    border-color: darken($facebook-color, 15%);
+}
+
+.google-button {
+    background-color: $google-color;
+    border-color: darken($google-color, 5%);
+}
+
+.google-button:hover, .google-button:active, .google-button:focus {
+    background-color: darken($google-color, 10%);
+    border-color: darken($google-color, 15%);
 }
 
 .promocao {

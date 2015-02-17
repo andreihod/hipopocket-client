@@ -15,7 +15,7 @@
                 </span>
             </div>
         </form>           
-        <ul class="nav navbar-nav navbar-right"> 
+        <ul ng-if="$root.userState === 'unauthorized'" class="nav navbar-nav navbar-right"> 
             <li>
                 <a class="login-buttons"><button class="btn btn-primary facebook-button" ng-click="login('facebook')"><i class="fa fa-fw fa-facebook"></i> Login com Facebook</button></a>
             </li>
@@ -25,25 +25,24 @@
             <li>
                 <a class="login-buttons"><button class="btn btn-primary google-button" ng-click="login('google')"><i class="fa fa-fw fa-google"></i> Login com Google</button></a>
             </li>
-            <!--
+        </ul>
+        <ul ng-if="$root.userState === 'logged'" class="nav navbar-nav navbar-right">
             <li class="dropdown">
-                <a href="#/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    Seja bem-vindo, Usuário <span class="caret"></span>
+                <a class="dropdown-toggle navbar-profile-name" data-toggle="dropdown" role="button" aria-expanded="false">
+                    Olá, {{$root.userAuthenticated.usuario_displayname}} <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu" role="menu">
                     <li>
-                        <a href="#/">Sair</a>
+                        <a ng-click="logout()">Sair</a>
                     </li>
                 </ul>
             </li>
-            -->
-        </ul>         
+            <li>
+                <a class="navbar-profile-picture">
+                    <img src="{{$root.userAuthenticated.usuario_profile_picture}}" alt="user profile picture" class="img-circle"/>
+                </a>
+            </li>            
+        </ul>    
     </div>
 
 </nav>
-
-<!-- Login temporário -->
-
-   
-    
-</ul>

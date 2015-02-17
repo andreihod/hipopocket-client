@@ -80,20 +80,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
-.textselection {
-    background: #007F52;
-    color:      #fff;
-}
-
-// Seleção de texto
-::selection {
-    @extend .textselection; /* WebKit/Blink Browsers */
-}
-
-::-moz-selection {
-    @extend .textselection; /* Gecko Browsers */
-}
-
 nav li a.login-buttons {
     line-height: 60px;
     padding: 0px 10px;
@@ -101,6 +87,23 @@ nav li a.login-buttons {
 
 nav li a.ou-button {
     padding: 0px;
+}
+
+nav li a.navbar-profile-name {    
+    padding-right: 8px;
+    padding-left: 8px;
+    cursor: pointer;
+}
+
+nav li a.navbar-profile-picture {
+    padding: 9px;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+nav li a.navbar-profile-picture img {
+    width: 40px;
+    height: 40px;
 }
 
 .facebook-button {

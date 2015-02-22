@@ -1,9 +1,9 @@
 <!-- Tabs -->
 <ul class="nav nav-tabs">
-    <li role="presentation" ng-class="{active: tipo=='destaques'}">
+    <li role="presentation" ng-class="{active: tipo=='hot'}">
         <a href="#/destaques"><span class="glyphicon glyphicon-fire"></span> Em Destaque</a>
     </li>
-    <li role="presentation" ng-class="{active: tipo=='novos'}">
+    <li role="presentation" ng-class="{active: tipo=='new'}">
         <a href="#/novos"><span class="glyphicon glyphicon-asterisk"></span> Novos</a>
     </li>
 </ul>
@@ -12,6 +12,20 @@
 <div class="row">
     <div class="col-md-9">
         <promocao ng-repeat="p in promocoes" data="p"></promocao>
+        <nav class="promocao-pagina">
+          <ul class="pagination">
+            <li ng-if="page !== 1">
+              <a ng-click="setPage(page - 1)" aria-label="Previous">
+                <span aria-hidden="true">&laquo; Anterior</span>
+              </a>
+            </li>
+            <li>
+              <a ng-click="setPage(page + 1)" aria-label="Next">
+                <span aria-hidden="true">Próxima &raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
     </div>
     <div class="col-md-3 hidden-xs hidden-sm">
         <div class="painel-controle panel panel-default">
@@ -21,3 +35,4 @@
         </div>
     </div>
 </div>
+

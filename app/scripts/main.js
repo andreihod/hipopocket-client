@@ -9,7 +9,11 @@ angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment'])
         .when('/:tipo', {
             templateUrl: 'views/index.html',
             controller: 'IndexController'
-        })  
+        }) 
+        .when('/:tipo/page/:page', {
+            templateUrl: 'views/index.html',
+            controller: 'IndexController'
+        }) 
         .when('/app/publique', {
             templateUrl: 'views/publique.html',
             controller: 'PubliqueController'

@@ -1,4 +1,4 @@
-angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment'])
+angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment', 'angular-loading-bar'])
 
 .config(
     function($routeProvider, $locationProvider, $httpProvider) {

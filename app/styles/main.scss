@@ -213,3 +213,21 @@ nav li a.navbar-profile-picture img {
     cursor: pointer;
 }
 
+/* Customização da barra de progresso no topo da página */
+
+#loading-bar .bar {
+    background: $brand-primary !important;
+}
+
+#loading-bar-spinner .spinner-icon {
+    border-top-color:  $brand-primary !important;
+    border-left-color: $brand-primary !important;
+}
+
+#loading-bar .peg {
+    -moz-box-shadow: $brand-primary 1px 0 6px 1px !important;
+    -ms-box-shadow: $brand-primary 1px 0 6px 1px !important;
+    -webkit-box-shadow: $brand-primary 1px 0 6px 1px !important;
+    box-shadow: $brand-primary 1px 0 6px 1px !important;
+}
+

@@ -1,8 +1,5 @@
 var NavbarController = function ($scope, $rootScope, $window, Usuario, BaseUrl) {
 
-	$rootScope.userAuthenticated = null;
-	$rootScope.userState = 'authenticating'; 
-
 	Usuario.me(
 		function(data){
 			$rootScope.userAuthenticated = data;

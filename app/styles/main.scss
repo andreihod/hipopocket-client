@@ -80,13 +80,17 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
-nav li a.login-buttons {
+nav li a.login-buttons, a.login-buttons {
     line-height: 60px;
     padding: 0px 10px;
 }
 
-nav li a.ou-button {
+nav li a.ou-button, a.ou-button {
     padding: 0px;
+}
+
+a.login-buttons:hover {
+    text-decoration: none;
 }
 
 nav li a.navbar-profile-name {    
@@ -211,6 +215,14 @@ nav li a.navbar-profile-picture img {
 
 .promocao-pagina li {
     cursor: pointer;
+}
+
+.login-modal {
+    text-align: center;
+}
+
+.login-modal div {
+    display: inline;
 }
 
 /* Customização da barra de progresso no topo da página */

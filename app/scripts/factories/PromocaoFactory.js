@@ -13,7 +13,13 @@ PromocaoFactory = function ($resource, BaseUrl) {
       					params: {page: '1'},
       					url: BaseUrl + '/deals/new/page/:page',
       					isArray: true
-      				}
+      				},
+      'query': {
+                  method: 'GET',
+                  params: {page: '1', type: 'hot'},
+                  url: BaseUrl + '/deals/:type/search/:search/page/:page',
+                  isArray: true
+                }
     });
 	
 }

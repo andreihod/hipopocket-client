@@ -19,6 +19,12 @@ PromocaoFactory = function ($resource, BaseUrl) {
                   params: {page: '1', type: 'hot'},
                   url: BaseUrl + '/deals/:type/search/:search/page/:page',
                   isArray: true
+                },
+      'update': {
+                  method: 'PUT',
+                  params: {promo_descr : promo_descr, promo_url : promo_url},
+                  url: BaseUrl + '/deals/:id',
+                  isArray: false
                 }
     });
 	

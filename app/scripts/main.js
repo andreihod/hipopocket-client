@@ -16,8 +16,7 @@ angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment', 'angular
         }) 
         .when('/app/publique', {
             templateUrl: 'views/publique.html',
-            controller: 'PubliqueController', 
-            requireLogin: true
+            controller: 'PubliqueController'
         })
         .otherwise({
           redirectTo: function () {

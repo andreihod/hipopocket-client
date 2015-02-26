@@ -17,13 +17,13 @@
         </form>           
         <ul ng-if="$root.userState === 'unauthorized'" class="nav navbar-nav navbar-right"> 
             <li>
-                <a class="login-buttons"><button class="btn btn-primary facebook-button" ng-click="login('facebook')"><i class="fa fa-fw fa-facebook"></i> Login com Facebook</button></a>
+                <a class="login-buttons"><button class="btn btn-primary facebook-button" ng-click="login('facebook')"><i class="fa fa-fw fa-facebook"></i> Login <span class="hidden-xs">com</span> Facebook</button></a>
             </li>
             <li>
-                <a class="login-buttons ou-button">ou</a>
+                <a class="login-buttons ou-button hidden-xs">ou</a>
             </li>
             <li>
-                <a class="login-buttons"><button class="btn btn-primary google-button" ng-click="login('google')"><i class="fa fa-fw fa-google"></i> Login com Google</button></a>
+                <a class="login-buttons"><button class="btn btn-primary google-button" ng-click="login('google')"><i class="fa fa-fw fa-google"></i> Login <span class="hidden-xs">com</span> Google</button></a>
             </li>
         </ul>
         <ul ng-if="$root.userState === 'logged'" class="nav navbar-nav navbar-right">
@@ -37,7 +37,7 @@
                     </li>
                 </ul>
             </li>
-            <li>
+            <li class="hidden-xs">
                 <a class="navbar-profile-picture">
                     <img ng-src="{{$root.userAuthenticated.usuario_profile_picture}}" alt="user profile picture" class="img-circle"/>
                 </a>
@@ -59,17 +59,17 @@
                 <div>
                     <a class="login-buttons">
                         <button class="btn btn-primary facebook-button" ng-click="login('facebook')">
-                            <i class="fa fa-fw fa-facebook"></i> Login com Facebook
+                            <i class="fa fa-fw fa-facebook"></i> Login <span class="hidden-xs">com</span> Facebook
                         </button>
                     </a>
                 </div>
                 <div>
-                    <span class="login-buttons ou-button">ou</span>
+                    <span class="login-buttons ou-button hidden-xs">ou</span>
                 </div>
                 <div>
                     <a class="login-buttons">
                         <button class="btn btn-primary google-button" ng-click="login('google')">
-                            <i class="fa fa-fw fa-google"></i> Login com Google
+                            <i class="fa fa-fw fa-google"></i> Login <span class="hidden-xs">com</span> Google
                         </button>
                     </a>
                 </div>

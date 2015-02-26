@@ -6539,6 +6539,30 @@ a.login-buttons:hover {
   margin-bottom: 10px;
 }
 
+/* Centraliza logo quando ├® tablet e smartphone */
+@media (max-width: 991px) {
+  .navbar-header {
+    text-align: center;
+  }
+
+  .navbar-header a {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-form {
+    margin: 0px;
+  }
+
+  .navbar-right {
+    display: table;
+    margin: 0 auto;
+  }
+}
+nav li {
+  display: inline-block !important;
+}
+
 nav li a.navbar-profile-name {
   padding-right: 8px;
   padding-left: 8px;
@@ -6593,8 +6617,15 @@ nav li a.navbar-profile-picture img {
 
 .promocao-vote {
   text-align: center;
+  padding: 0px;
 }
 
+@media (min-width: 768px) {
+  .promocao-vote {
+    padding: 0px 15px;
+    text-align: center;
+  }
+}
 .promocao-text, .promocao-titulo, .up-vote, .down-vote {
   font-size: 16px;
 }

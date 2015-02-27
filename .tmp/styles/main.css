@@ -6518,6 +6518,10 @@ button.close {
     display: none !important;
   }
 }
+.navbar-brand {
+  padding: 15px;
+}
+
 nav li a.login-buttons, a.login-buttons {
   line-height: 60px;
   padding: 0px 10px;

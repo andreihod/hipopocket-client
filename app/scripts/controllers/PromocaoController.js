@@ -1,6 +1,8 @@
 var PromocaoController = function ($scope, $rootScope, Promocao) {
 	
+
 	var Cadastrar = function () {
+		console.log('oi');
 		if (!$rootScope.isLogged())
 			return;
 

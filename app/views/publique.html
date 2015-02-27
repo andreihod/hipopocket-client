@@ -1,11 +1,11 @@
 <form>
   <div class="form-group">
     <label for="promo-description">Descrição</label>
-    <input type="text" class="form-control" required="required" id="promo-description" placeholder="Descrição" ng-model="$root.promo_descr">
+    <input type="text" class="form-control" required="required" id="promo-description" placeholder="Descrição" ng-model="descricao">
   </div>
   <div class="form-group">
     <label for="promo-url" >URL</label>
-    <input type="URL" class="form-control" required="required" id="promo-url" placeholder="URL" ng-model="$root.promo_url">
+    <input type="text" class="form-control" required="required" id="promo-url" placeholder="URL" ng-model="url">
   </div>
-  <button type="submit" class="btn btn-primary">Salvar</button>
+  <button type="submit" ng-click="cadastrar()" class="btn btn-primary">Salvar</button>
 </form>

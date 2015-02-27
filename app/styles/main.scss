@@ -3,13 +3,16 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 /* Variáveis */
 
     /* Bootstrap */
-    $brand-primary: #009963;
+    $brand-primary: #DB3615;
     $brand-success: #18BA18;
     $brand-info:    #5bc0de;
     $brand-warning: #f0ad4e;
     $brand-danger:  #BE1E2D;
 
-    $body-bg: #FDFDFD;
+    $gray-base:     #000;
+    $gray-lighter:  lighten($gray-base, 88%); // #eee
+
+    $body-bg: #FFFFFF;
 
     $font-family-sans-serif:  "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -23,13 +26,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     $navbar-collapse-max-height: 340px;
 
     $navbar-default-color:  $brand-primary;
-    $navbar-default-bg:     #f8f8f8;
-    $navbar-default-border: darken($navbar-default-bg, 4%);
+    $navbar-default-bg:     #F4F4F4;
+    $navbar-default-border: $gray-lighter;
 
     $navbar-default-link-color:          $brand-primary;
-    $navbar-default-link-hover-color:    #00613F;
+    $navbar-default-link-hover-color:    darken($brand-primary, 5%);
     $navbar-default-link-hover-bg:       transparent;
-    $navbar-default-link-active-color:   #00613F;
+    $navbar-default-link-active-color:   darken($brand-primary, 5%);
     $navbar-default-link-active-bg:      darken($navbar-default-bg, 3%);
     $navbar-default-link-disabled-color: #ccc;
     $navbar-default-link-disabled-bg:    transparent;
@@ -39,7 +42,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     $navbar-default-brand-hover-bg:    transparent;
 
     $navbar-default-toggle-hover-bg:     #ddd;
-    $navbar-default-toggle-icon-bar-bg:  #00613F;
+    $navbar-default-toggle-icon-bar-bg:  $brand-primary;
     $navbar-default-toggle-border-color: transparent;
     
 
@@ -47,7 +50,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     $nav-link-padding:  10px 15px;
     $nav-link-hover-bg: transparent;
 
-    $nav-tabs-border-color: darken($navbar-default-bg, 6.5%);
+    $nav-tabs-border-color: $gray-lighter;
 
     $nav-tabs-link-hover-border-color: transparent;
 
@@ -62,23 +65,28 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     $btn-default-bg:     $body-bg;
     $btn-default-border: #ccc;
 
-    // Input
-    $input-border-focus: #007F52 ;
-
     /* Hipopocket */
-    $up-vote   : $brand-primary;
-    $down-vote : $brand-danger;
+    $up-vote   :      #078903;
+    $down-vote :      #CF1515;
     $default-padding: 15px;
-    $cinza-claro: #A6A6A6;
+    $cinza-claro:     #A6A6A6;
 
     $facebook-color: #3B5998;
-    $google-color: #DD4B39;
+    $google-color:   #DD4B39;
+
+    // Input
+    $input-border-focus:      #FF5D18;
+    $input-color-placeholder: $cinza-claro;
 
 // -----------
 
 // bower:scss
 @import "../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
+
+.navbar-brand {
+    padding: 15px;
+}
 
 nav li a.login-buttons, a.login-buttons {
     line-height: 60px;
@@ -98,7 +106,37 @@ a.login-buttons:hover {
 }
 
 .navbar {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Centraliza logo quando é tablet e smartphone */
+@media (max-width: $screen-sm-max) {
+    
+    .navbar-header {
+        text-align: center;
+    }
+
+    .navbar-header a{
+        width: 100%;
+    }
+
+}
+
+@media (max-width: $screen-xs-max) {
+
+    .navbar-form {
+        margin: 0px;
+    }
+
+    .navbar-right {
+        display: table;
+        margin: 0 auto;
+    }
+
+}
+
+nav li {
+    display: inline-block !important;
 }
 
 nav li a.navbar-profile-name {    
@@ -155,10 +193,18 @@ nav li a.navbar-profile-picture img {
 
 .promocao-vote {
     text-align: center;
+    padding: 0px;
+}
+
+@media (min-width: $screen-sm-min) { 
+    .promocao-vote {
+        padding: 0px 15px;
+        text-align: center;
+    }
 }
 
 .promocao-text {
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .promocao-titulo {
@@ -179,12 +225,6 @@ nav li a.navbar-profile-picture img {
     color: $brand-primary;
 }
 
-.up-vote, .down-vote {
-    @extend .promocao-text;
-    display: block;
-    color: $cinza-claro;
-}
-
 .promocao-score {
     font-size: 14px;
     color: $cinza-claro;
@@ -192,6 +232,13 @@ nav li a.navbar-profile-picture img {
 
 .vote {
     cursor: pointer;
+}
+
+.up-vote, .down-vote {
+    @extend .promocao-text;
+    @extend .vote;
+    display: block;
+    color: $cinza-claro;
 }
 
 .up-vote:hover, .up-vote:active, .upvoted {

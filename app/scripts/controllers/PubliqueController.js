@@ -1,7 +1,8 @@
 var PubliqueController = function ($scope, $rootScope, Promocao) {
-       $scope.cadastrar = function () {
+  
+  $scope.cadastrar = function () {
 		
-		var promocao   = $scope;
+		var promocao = $scope;
 		var id = null;
 
 		if(Boolean(promocao.id)){
@@ -9,6 +10,7 @@ var PubliqueController = function ($scope, $rootScope, Promocao) {
 		}
 		Promocao.save(id, { promo_descr : promocao.descricao, promo_url : promocao.url});
 	}
+	
 }
 
 angular.module('Hipopocket').controller('PubliqueController', PubliqueController);

@@ -1,11 +1,24 @@
-<form>
-  <div class="form-group">
-    <label for="promo-description">Descrição</label>
-    <input type="text" class="form-control" required="required" id="promo-description" placeholder="Descrição" ng-model="descricao">
+<form name="form" novalidate>
+	<div ng-show="form.description.$error.required || form.url.$error.required" class="alert alert-warning" role="alert"><b>Atenção</b> Todos os campos são obrigatórios</div>
+	<div ng-show="form.$valid && form.$submitted" class="alert alert-success" role="alert"><b>Publicado!</b> Promoção publicada com sucesso</div>
+  <div class="form-group has-feedback" ng-class="{'has-error': form.description.$invalid, 'has-success': form.description.$valid}">
+    <label for="promo-description">Descrição da promoção</label>
+    <input type="text" class="form-control" required name="description" placeholder="Ex.: [Loja X] Tênis Nike de R$ 200,00 por R$ 119,00" ng-model="descricao"/>
+    <span ng-show="form.description.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.description.$invalid" id="inputError2Status" class="sr-only">(error)</span>
+  	<span ng-show="form.description.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.description.$valid" id="inputError2Status" class="sr-only">(success)</span>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback" ng-class="{'has-error': form.url.$invalid, 'has-success': form.url.$valid}">
     <label for="promo-url" >URL</label>
-    <input type="url" class="form-control" required="required" id="promo-url" placeholder="URL" ng-model="url">
+    <input type="url" class="form-control" required name="url" placeholder="Link para o produto" ng-model="url"/>
+    <span ng-show="form.url.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.url.$invalid" id="inputError2Status" class="sr-only">(error)</span>
+  	<span ng-show="form.url.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.url.$valid" id="inputError2Status" class="sr-only">(success)</span>
+  	<p ng-show="form.url.$error.url" class="text-danger">Digite uma URL válida (ex.: http://google.com)</p>
   </div>
-  <button type="submit" ng-click="cadastrar()" class="btn btn-primary">Salvar</button>
+  <a href="javascript:history.back()" class="btn btn-default">Voltar</a>
+  <button ng-click="form.$valid && cadastrar()" class="btn btn-primary" ng-disabled="form.$invalid">Publicar Promoção</button>
+  
 </form>

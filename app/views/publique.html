@@ -18,7 +18,8 @@
   	<span ng-show="form.url.$valid" id="inputError2Status" class="sr-only">(success)</span>
   	<p ng-show="form.url.$error.url" class="text-danger">Digite uma URL válida (ex.: http://google.com)</p>
   </div>
+  <button ng-click="form.$valid && cadastrar()" class="btn btn-success" ng-disabled="form.$invalid">Publicar Promoção</button>
+  <button ng-if="id" ng-click="delete()" class="btn btn-danger">Excluir</button>
   <a href="javascript:history.back()" class="btn btn-default">Voltar</a>
-  <button ng-click="form.$valid && cadastrar()" class="btn btn-primary" ng-disabled="form.$invalid">Publicar Promoção</button>
   
 </form>

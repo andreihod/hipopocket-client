@@ -28,7 +28,7 @@ angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment', 'angular
 )
 
 .run(function($rootScope, $route, $location, amMoment) {
-    
+
     amMoment.changeLocale('pt-br');
 
     $rootScope.userAuthenticated = null;
@@ -49,6 +49,7 @@ angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment', 'angular
 
     $rootScope.$on("$locationChangeStart", function(event, next, current) {
         var r = $route.routes[$location.path()];
+        
         // Se é necessário login e não está logado, chama método isLogged() e não continua
         if((r && r.requireLogin) && !$rootScope.isLogged())
             event.preventDefault();                

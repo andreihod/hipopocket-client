@@ -6,7 +6,10 @@
         <a class="promocao-titulo" href="{{data.promo_url}}" target="_blank">
             {{data.promo_descr}}
         </a>                        
-        <small class="promocao-detalhes">Publicado por {{data.usuario_displayname}} há <span am-time-ago="data.promo_data"></span></small>
+        <small class="promocao-detalhes">
+        	Publicado por {{data.usuario_displayname}} há <span am-time-ago="data.promo_data"></span> - 
+        	<a ng-if="data.promo_usuario_id === $root.userAuthenticated.usuario_id" href="/#/app/publique?id={{data.promo_id}}">Editar<a/>
+        </small>
     </div>
 
 </div>

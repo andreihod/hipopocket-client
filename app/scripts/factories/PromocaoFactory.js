@@ -22,7 +22,9 @@ PromocaoFactory = function ($resource, BaseUrl) {
                 },
       'update': {
                   method: 'PUT',
-                  url: BaseUrl + '/deals/:promo_id'
+                  params: {
+                      id: "@id"
+                  }
                 }
     });
 	

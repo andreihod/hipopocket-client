@@ -1,0 +1,29 @@
+<form name="form" novalidate>
+	<div ng-show="form.description.$error.required || form.url.$error.required" class="alert alert-warning" role="alert"><b>Atenção</b> Todos os campos são obrigatórios</div>
+	<div ng-if="status !== 'undefined'"
+			 ng-class="{'alert alert-success': status==='success', 'alert alert-error': status==='error'}"
+			 role="alert">
+			 {{mensagem}}
+	</div>
+  <div class="form-group has-feedback" ng-class="{'has-error': form.description.$invalid, 'has-success': form.description.$valid}">
+    <label for="promo-description">Descrição da promoção</label>
+    <input type="text" class="form-control" required name="description" maxlength="150" placeholder="Ex.: [Loja X] Tênis Nike de R$ 200,00 por R$ 119,00" ng-model="promo.promo_descr"/>
+    <span ng-show="form.description.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.description.$invalid" id="inputError2Status" class="sr-only">(error)</span>
+  	<span ng-show="form.description.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.description.$valid" id="inputError2Status" class="sr-only">(success)</span>
+  </div>
+  <div class="form-group has-feedback" ng-class="{'has-error': form.url.$invalid, 'has-success': form.url.$valid}">
+    <label for="promo-url" >URL</label>
+    <input type="url" class="form-control" required name="url" maxlength="250" placeholder="Link para o produto" ng-model="promo.promo_url"/>
+    <span ng-show="form.url.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.url.$invalid" id="inputError2Status" class="sr-only">(error)</span>
+  	<span ng-show="form.url.$valid" class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+  	<span ng-show="form.url.$valid" id="inputError2Status" class="sr-only">(success)</span>
+  	<p ng-show="form.url.$error.url" class="text-danger">Digite uma URL válida (ex.: http://google.com)</p>
+  </div>
+  <button ng-click="form.$valid && cadastrar()" class="btn btn-success" ng-disabled="form.$invalid">Publicar Promoção</button>
+  <button ng-if="promo.promo_id" ng-click="delete()" class="btn btn-danger">Excluir</button>
+  <a href="javascript:history.back()" class="btn btn-default">Voltar</a>
+  
+</form>

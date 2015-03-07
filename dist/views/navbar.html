@@ -1,0 +1,79 @@
+<nav class="navbar navbar-default" role="navigation">
+
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/"><img src="images/Hipopocket-logo.png" alt="hipopocket"/></a>
+        </div>
+        <form class="navbar-form navbar-left" role="search">
+            <div class="input-group">
+                <input type="text" ng-model="$root.query" class="form-control" placeholder="Pesquisar...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+            </div>
+        </form>           
+        <ul ng-if="$root.userState === 'unauthorized'" class="nav navbar-nav navbar-right"> 
+            <li>
+                <a class="login-buttons"><button class="btn btn-primary facebook-button" ng-click="login('facebook')"><i class="fa fa-fw fa-facebook"></i> Login <span class="hidden-xs">com</span> Facebook</button></a>
+            </li>
+            <li>
+                <a class="login-buttons ou-button hidden-xs">ou</a>
+            </li>
+            <li>
+                <a class="login-buttons"><button class="btn btn-primary google-button" ng-click="login('google')"><i class="fa fa-fw fa-google"></i> Login <span class="hidden-xs">com</span> Google</button></a>
+            </li>
+        </ul>
+        <ul ng-if="$root.userState === 'logged'" class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle navbar-profile-name" data-toggle="dropdown" role="button" aria-expanded="false">
+                    Olá, {{$root.userAuthenticated.usuario_displayname}} <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>
+                        <a ng-click="logout()">Sair</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="hidden-xs">
+                <a class="navbar-profile-picture">
+                    <img ng-src="{{$root.userAuthenticated.usuario_profile_picture}}" alt="user profile picture" class="img-circle"/>
+                </a>
+            </li>            
+        </ul>    
+    </div>
+
+</nav>
+
+<!-- Modal de Login -->
+<div class="modal fade hipopocket-login" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="mySmallModalLabel">Por favor, faça login para continuar. É rapidinho</h4>
+            </div>
+            <div class="modal-body login-modal">
+                <div>
+                    <a class="login-buttons">
+                        <button class="btn btn-primary facebook-button" ng-click="login('facebook')">
+                            <i class="fa fa-fw fa-facebook"></i> Login <span class="hidden-xs">com</span> Facebook
+                        </button>
+                    </a>
+                </div>
+                <div>
+                    <span class="login-buttons ou-button hidden-xs">ou</span>
+                </div>
+                <div>
+                    <a class="login-buttons">
+                        <button class="btn btn-primary google-button" ng-click="login('google')">
+                            <i class="fa fa-fw fa-google"></i> Login <span class="hidden-xs">com</span> Google
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>

@@ -1,5 +1,5 @@
 angular.module("Hipopocket")
 
-.constant("BaseUrl", "")
+.constant("BaseUrl", "/api/v1")
 
 ;

@@ -1,4 +1,4 @@
 {
 	"development": {"BaseUrl": "http://localhost:3000/v1"},
-	"production": {"BaseUrl": "https://hipopocket.com.br/api/v1"}
+	"production": {"BaseUrl": ""}
 }

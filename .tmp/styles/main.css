@@ -6666,11 +6666,6 @@ nav li a.navbar-profile-picture img {
   color: #078903;
 }
 
-.down-vote {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
-
 .down-vote:hover, .down-vote:active, .downvoted {
   color: #CF1515;
 }

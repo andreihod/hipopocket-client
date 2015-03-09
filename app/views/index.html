@@ -21,7 +21,7 @@
                 <span aria-hidden="true">&laquo; Anterior</span>
               </a>
             </li>
-            <li>
+            <li ng-if="pagesQuantity > page">
               <a ng-click="setPage(page + 1)" aria-label="Next">
                 <span aria-hidden="true">Próxima &raquo;</span>
               </a>

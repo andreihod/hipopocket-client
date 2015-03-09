@@ -25,7 +25,13 @@ PromocaoFactory = function ($resource, BaseUrl) {
                   params: {
                       id: "@id"
                   }
+                },
+      'count': {
+                  method: 'GET',
+                  params: {type: 'hot'},
+                  url: BaseUrl + '/deals/:type/count/search/:search'
                 }
+
     });
 	
 }

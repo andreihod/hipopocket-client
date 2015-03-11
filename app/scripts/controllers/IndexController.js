@@ -1,6 +1,19 @@
 var IndexController = function ($scope, $rootScope, $routeParams, $location, Promocao) {
 	
-	$scope.tipo = $routeParams.tipo === 'destaques' ? 'hot' : 'new';
+	switch($routeParams.tipo){
+		case 'destaques':
+			$scope.tipo = 'hot';
+			break;
+		case 'novos':
+			$scope.tipo = 'new';
+			break;
+		case 'favoritos':
+			$scope.tipo = 'favorites';
+			break;
+		default:
+			$scope.tipo = 'hot';
+			break;
+	}
 	$scope.page = parseInt($routeParams.page || 1);
 
 	$scope.setPage = function (page) {

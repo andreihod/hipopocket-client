@@ -8,12 +8,13 @@ var IndexController = function ($scope, $rootScope, $routeParams, $location, Pro
 			$scope.tipo = 'new';
 			break;
 		case 'favoritos':
-			$scope.tipo = 'favorites';
+			$scope.tipo = 'favorite';
 			break;
 		default:
 			$scope.tipo = 'hot';
 			break;
 	}
+
 	$scope.page = parseInt($routeParams.page || 1);
 
 	$scope.setPage = function (page) {
@@ -30,6 +31,7 @@ var IndexController = function ($scope, $rootScope, $routeParams, $location, Pro
 				});
 			});
 		} else {
+
 			// Se não possui query, ou for a primeira vez que entra no app
 			// busca as promoções conforme o tipo e a página
 			Promocao[$scope.tipo]({page: $scope.page}, function(res){

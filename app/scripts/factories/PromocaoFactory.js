@@ -14,6 +14,12 @@ PromocaoFactory = function ($resource, BaseUrl) {
       					url: BaseUrl + '/deals/new/page/:page',
       					isArray: true
       				},
+      'favorite': {
+                method: 'GET',
+                params: {page: '1'},
+                url: BaseUrl + '/deals/favorite/page/:page',
+                isArray: true
+                },
       'query': {
                   method: 'GET',
                   params: {page: '1', type: 'hot'},

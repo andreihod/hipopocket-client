@@ -5,19 +5,25 @@ var FavoritoController = function ($scope, $rootScope, Favorito) {
 	}
 
 	var Favoritar = function () {
+
 		// Somente prosseguir se estiver logado
 		if (!$rootScope.isLogged())
 			return;
 
 		var promo   = $scope.promocao;
-		var v = Favorito.get(promo.promo_id);
-		console.log(v);
+		var possuiFavorito = Boolean(promo.fav_promo_id);
 
-		/*if (tipo === 'F') {
-			Favorito.save(null, {fav_promo_id: promo.promo_id});
+		if(possuiFavorito){
+			promo.fav_promo_id = null;
+			Favorito.delete({fav_promo_id : promo.promo_id});
+
 		}else{
-			Favorito.delete({fav_promo_id: promo.promo_id});
-		}*/
+			Favorito.update(null, {fav_promo_id : promo.promo_id});
+			promo.fav_promo_id = promo.promo_id;
+		}
+
+
+
 	}
 	
 }

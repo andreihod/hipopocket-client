@@ -1,8 +1,13 @@
 FavoritoFactory = function ($resource, BaseUrl) {
 	
-	return $resource( BaseUrl + '/favorite/:fav_promo_id', null,
+	return $resource( BaseUrl + '/favorites/:fav_promo_id', null,
             { 
-            	'update': {method: 'PUT'}
+            	'update': {
+            				method: 'PUT',
+                  			params: {
+                      			fav_promo_id: "@fav_promo_id"
+                  			}
+                  		}
             }
          );
 }

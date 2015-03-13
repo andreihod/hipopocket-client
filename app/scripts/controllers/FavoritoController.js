@@ -16,7 +16,6 @@ var FavoritoController = function ($scope, $rootScope, Favorito) {
 		if(possuiFavorito){
 			promo.fav_promo_id = null;
 			Favorito.delete({fav_promo_id : promo.promo_id});
-
 		}else{
 			Favorito.save(null, {fav_promo_id : promo.promo_id});
 			promo.fav_promo_id = promo.promo_id;

@@ -26,7 +26,7 @@ var IndexController = function ($scope, $rootScope, $routeParams, $location, Pro
 			Promocao.query({search: $rootScope.query, type: $scope.tipo, page: $scope.page}, function(res){
 				$scope.promocoes = res;
 
-				Promocao['count']({search: $rootScope.query, type: $scope.tipo}, function(res){
+				Promocao.count({search: $rootScope.query, type: $scope.tipo}, function(res){
 					$scope.pagesQuantity = res[0];
 				});
 			});
@@ -37,7 +37,7 @@ var IndexController = function ($scope, $rootScope, $routeParams, $location, Pro
 			Promocao[$scope.tipo]({page: $scope.page}, function(res){
 				$scope.promocoes = res;
 
-				Promocao['count']({type: $scope.tipo}, function(res){
+				Promocao.count({type: $scope.tipo}, function(res){
 					$scope.pagesQuantity = res[0];
 				});
 

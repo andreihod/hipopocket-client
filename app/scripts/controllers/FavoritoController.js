@@ -18,7 +18,7 @@ var FavoritoController = function ($scope, $rootScope, Favorito) {
 			Favorito.delete({fav_promo_id : promo.promo_id});
 
 		}else{
-			Favorito.update(null, {fav_promo_id : promo.promo_id});
+			Favorito.save(null, {fav_promo_id : promo.promo_id});
 			promo.fav_promo_id = promo.promo_id;
 		}
 

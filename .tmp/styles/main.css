@@ -6630,7 +6630,7 @@ nav li a.navbar-profile-picture img {
     text-align: center;
   }
 }
-.promocao-text, .promocao-titulo, .up-vote, .down-vote {
+.promocao-text, .promocao-titulo, .up-vote, .down-vote, .favorite, .favorite:hover, .favorite:active, .favorited {
   font-size: 18px;
 }
 
@@ -6653,11 +6653,11 @@ nav li a.navbar-profile-picture img {
   color: #A6A6A6;
 }
 
-.vote, .up-vote, .down-vote, .up-vote:hover, .up-vote:active, .upvoted, .down-vote:hover, .down-vote:active, .downvoted {
+.vote, .up-vote, .down-vote, .favorite, .up-vote:hover, .up-vote:active, .upvoted, .down-vote:hover, .down-vote:active, .downvoted, .favorite:hover, .favorite:active, .favorited {
   cursor: pointer;
 }
 
-.up-vote, .down-vote {
+.up-vote, .down-vote, .favorite {
   display: block;
   color: #A6A6A6;
 }
@@ -6668,6 +6668,10 @@ nav li a.navbar-profile-picture img {
 
 .down-vote:hover, .down-vote:active, .downvoted {
   color: #CF1515;
+}
+
+.favorite:hover, .favorite:active, .favorited {
+  color: #FAB400;
 }
 
 .painel-controle {

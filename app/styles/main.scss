@@ -70,6 +70,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     $down-vote :      #CF1515;
     $default-padding: 15px;
     $cinza-claro:     #A6A6A6;
+    $favorite:       #FAB400;
 
     $facebook-color: #3B5998;
     $google-color:   #DD4B39;
@@ -234,7 +235,7 @@ nav li a.navbar-profile-picture img {
     cursor: pointer;
 }
 
-.up-vote, .down-vote {
+.up-vote, .down-vote, .favorite {
     @extend .promocao-text;
     @extend .vote;
     display: block;
@@ -249,6 +250,12 @@ nav li a.navbar-profile-picture img {
 .down-vote:hover, .down-vote:active, .downvoted {
     @extend .vote;
     color: $down-vote;
+}
+
+.favorite:hover, .favorite:active, .favorited {
+    @extend .promocao-text;
+    @extend .vote;
+    color: $favorite;
 }
 
 .painel-controle {

@@ -9,7 +9,7 @@
         <small class="promocao-detalhes">
         	Publicado por {{data.usuario_displayname}} há <span am-time-ago="data.promo_data"></span>
             <span ng-if="data.promo_usuario_id === $root.userAuthenticated.usuario_id"> - 
-            	<a href="/#/app/publique?id={{data.promo_id}}">
+            	<a href="#/app/publique?id={{data.promo_id}}">
                     Editar
                 <a/>
             </span>

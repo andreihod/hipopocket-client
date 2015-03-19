@@ -19,6 +19,10 @@ angular.module("Hipopocket", ['ngRoute', 'ngResource', 'angularMoment', 'angular
             controller: 'PubliqueController',
             requireLogin: true
         })
+        .when('/facebook/:id/:nome', {
+            templateUrl: 'views/facebook.html',
+            controller: 'FacebookController'
+        })
         .otherwise({
           redirectTo: function () {
             return "/destaques";

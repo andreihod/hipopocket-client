@@ -42,5 +42,12 @@
                 </a>
             </div>
         </div>
+        <div class="painel-controle panel panel-default">
+            <div class="panel-heading"><b>Categorias</b></div>
+            <div class="panel-body">
+                <label class="promocao-lista-categoria"><input type="checkbox" checked="true"> Todas</label>
+                <label ng-repeat="cat in categories" class="promocao-lista-categoria"><input type="checkbox"> {{cat.cat_descr}}</label>
+            </div>
+        </div>        
     </div>
 </div>

@@ -1,4 +1,4 @@
-var IndexController = function ($scope, $rootScope, $routeParams, $location, Promocao) {
+var IndexController = function ($scope, $rootScope, $routeParams, $location, Promocao, Categoria) {
 	
 	switch($routeParams.tipo){
 		case 'destaques':
@@ -16,6 +16,13 @@ var IndexController = function ($scope, $rootScope, $routeParams, $location, Pro
 	}
 
 	$scope.page = parseInt($routeParams.page || 1);
+
+	$scope.categories = [];
+
+	// Carrega categoria
+	Categoria.query(null, function (res) {
+		$scope.categories = res;
+	});
 
 	$scope.setPage = function (page) {
 		$location.url('/' + $routeParams.tipo + '/page/' + page);
@@ -44,6 +51,7 @@ var IndexController = function ($scope, $rootScope, $routeParams, $location, Pro
 			});
 		}
 	});
+
 }
 
 angular.module('Hipopocket').controller('IndexController', IndexController);

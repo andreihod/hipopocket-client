@@ -6653,6 +6653,11 @@ nav li a.navbar-profile-picture img {
   color: #A6A6A6;
 }
 
+.promocao-lista-categoria {
+  display: block;
+  text-align: left;
+}
+
 .vote, .up-vote, .down-vote, .favorite, .up-vote:hover, .up-vote:active, .upvoted, .down-vote:hover, .down-vote:active, .downvoted, .favorite:hover, .favorite:active, .favorited {
   cursor: pointer;
 }
